@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
+import HeaderBar from "./components/HeaderBar";
 import Home from "./components/Home";
 import Search from "./components/home/Search";
 import Gallery from "./components/Gallery";
@@ -28,7 +29,12 @@ const App: React.FC = (): JSX.Element => {
 
   const routing = useRoutes([homeRoutes, galleryRoutes]);
 
-  return <>{routing}</>;
+  return (
+    <>
+      <HeaderBar />
+      <>{routing}</>
+    </>
+  );
 };
 
 export default App;
